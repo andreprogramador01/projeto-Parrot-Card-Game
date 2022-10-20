@@ -1,0 +1,41 @@
+* {
+    box-sizing:border-box;
+}
+body{
+    background-color: #EEF9BF;
+}
+header{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 66px;
+    color:#75B79E;
+    display: flex;
+    justify-content:center;
+}
+.cartas{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    gap:34px;
+}
+.carta{
+    width:117px;
+    height:146px;
+    background-color: #A7E9AF;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+    cursor:pointer;
+
+}
+.carta img{
+    width:100px;
+    height:100px;
+}
+.esconde{
+    display: none;
+}
