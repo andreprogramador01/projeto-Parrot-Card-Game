@@ -30,12 +30,26 @@ header{
     border: 1px solid #99CEA8;
     border-radius: 5px;
     cursor:pointer;
-
+    transform-style: preserve-3d;
+    transition: transform 1s linear;
 }
 .carta img{
     width:100px;
     height:100px;
 }
+.frente{
+    
+}
 .esconde{
     display: none;
+    transform: rotateY(-180deg);
+    transition:transform 1s linear;
+}
+.verso2{
+    transform: rotateY(-180deg);
+    transition:transform 1s linear;
+}
+.card-face{
+    backface-visibility: hidden;
+
 }
