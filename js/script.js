@@ -1,5 +1,5 @@
-let qtdeCartas = prompt("Com quantas cartas quer jogar?");
-const listaCartasViradas = [""];
+let qtdeCartas = Number(prompt("Com quantas cartas quer jogar?"));
+let qtdeJogadas = 0;
 
 let cartasViradas = 0;
 while(qtdeCartas < 4 || qtdeCartas > 14 || qtdeCartas % 2 !== 0){
@@ -21,7 +21,7 @@ const arrCartas =[
                     'tripletsparrot.gif',
                     'tripletsparrot.gif',
                     'unicornparrot.gif',
-                    'unicornparrot.gif,'
+                    'unicornparrot.gif'
                 ]
                 for(let i=13; i>=qtdeCartas;i--){
                     arrCartas.pop();
@@ -41,6 +41,10 @@ function comparador() {
     return Math.random() - 0.5; 
 }
 function toggle(carta){
+    if(carta.classList.contains('travado')){
+        return false;
+    }
+    qtdeJogadas++;
     const frente = carta.querySelector('.frente');
     const verso = carta.querySelector('.verso');
     
@@ -94,6 +98,7 @@ function verificaCombinacao(){
         
     }
     cartasViradas = 0;
+    verificaFimDoJogo();
 }
 function desviraCartas(carta1,carta2){
     let verso1 = document.getElementById(carta1);
@@ -107,4 +112,11 @@ function desviraCartas(carta1,carta2){
     verso2.classList.toggle('verso2');
     verso2.querySelector('.frente').classList.remove('esconde');
 
+}
+function verificaFimDoJogo(){
+    let qtdeDeCartasViradas = document.querySelectorAll('.travado').length;
+
+    if(qtdeCartas === qtdeDeCartasViradas){
+        alert(`Você ganhou com ${qtdeJogadas} jogadas`);
+    }
 }

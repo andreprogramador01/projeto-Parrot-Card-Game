@@ -4,6 +4,10 @@
 body{
     background-color: #EEF9BF;
 }
+main{
+    display: flex;
+    justify-content: center;
+}
 header{
     font-family: 'Roboto';
     font-style: normal;
@@ -13,12 +17,15 @@ header{
     color:#75B79E;
     display: flex;
     justify-content:center;
+    margin-bottom:47px;
 }
 .cartas{
     display: flex;
     align-items:center;
     justify-content: center;
     gap:34px;
+    width: 900px;
+    flex-wrap:wrap;
 }
 .carta{
     width:117px;
@@ -42,14 +49,16 @@ header{
 }
 .esconde{
     display: none;
-    transform: rotateY(-180deg);
-    transition:transform 1s linear;
 }
 .verso2{
     transform: rotateY(-180deg);
-    transition:transform 1s linear;
 }
 .card-face{
     backface-visibility: hidden;
 
+}
+@media screen(max-width:335px) {
+    .cartas{
+        width:100%;
+    }
 }
